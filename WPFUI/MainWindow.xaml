@@ -17,9 +17,38 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+        
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Coral" Content="Menu"/>
-        <Label Grid.Row="1" Grid.Column="0" Background="Azure" Content="Player Data"/>
+        
+        <Grid Grid.Row="1" Grid.Column="0" Background="Azure">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Class:"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Health:"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Experience:"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Level:"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Gold:"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}"/>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPlayer.Class}"/>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding CurrentPlayer.HitPoints}"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}"/>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.Gold}"/>
+            <Button Grid.Row="6" Grid.Column="0" Content="Add EXP" Click="ButtonBase_OnClick"/>
+        </Grid>
+
         <Label Grid.Row="2" Grid.Column="0" Background="LightGoldenrodYellow" Content="Inventory/Quest"/>
         <Label Grid.Row="1" Grid.Column="1" Background="Black" Content="Game Data"/>
         <Label Grid.Row="2" Grid.Column="2" Background="DarkCyan" Content="Combat/Movement Controls"/>
